@@ -15,15 +15,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <title> Sanz Clim- Karla</title>
       </head>
       <body>
+        <h1>Primer proyecto técnico para Sanz Clim</h1>
         <Navigation/>
         {children}
       </body>
     </html>
   )
 }
+
+
+
 

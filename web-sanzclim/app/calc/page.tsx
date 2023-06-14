@@ -11,12 +11,22 @@ export default function Calculator (){
     const handleUserNumber = (event) => {
         setCurrentNumber(event.target.value);
     }
-    //Función que calcule la suma de los números que la usuaria escriba. Una vez se añade el número, se vuelve a poner en blanco para añadir un nuevo número. 
+    //Función que añade los números que la usuaria escriba. Una vez se añade el número, se vuelve a poner en blanco para añadir un nuevo número. 
     //En HTML se ha puesto el type text, ya que en el ejercicio ofrecido por la empresa se especifica que no solo va a recibirse types number. 
     const handleAddNumber = () => {
         setNumbers([...numbers, parseFloat(currentNumber)]);
         setCurrentNumber('')
     }
+
+    //Función que calcula la suma: se deben sumar los valores que la usaria previamente ha puesto en la lista de "añadir número".
+    //Mediante el console.log(sum) se puede apreciar que la suma de diferentes números se realiza correctamente.
+    //Se tiene que realizar una función que nos ayude a que esta operación se refleje el html "calculo total". La lógica a seguir debería se crear un objeto que guarde los números y el resultado. 
+    //¿qué pasa cuando se pulsa el botón sumar? --> el espacio para escribir el número se limpia || la lista de números añadidos se borra || El calculo para que se recorra debe guardarse en la variable estado calculations (esto debería ayudarnos a que se pueda guardar más tarde en el LocalStorage) 
+    const handleCalculate = () => {
+        const sum = numbers.reduce((accumulator, numbers) => accumulator + numbers,0);
+        console.log(sum);
+    }
+
     //Funcion para enviar para el LocalStorage
 
     //Estructura básica de HTML para saber las funciones y estados necesarios
@@ -30,10 +40,12 @@ export default function Calculator (){
                     <li key={index}>{number}</li>
                 ))}
             </ul>
-            <button>Sumar</button>
+            <button onClick={handleCalculate}>Sumar</button>
             <button>Guardar operación</button>
             <h2>Resultado del cálculo</h2>
-            <ul>Calculo total</ul>
+            <ul>Calculo total
+
+            </ul>
         </div>
     )
 }

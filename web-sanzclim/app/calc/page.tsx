@@ -6,6 +6,7 @@ export default function Calculator (){
     const [currentNumber, setCurrentNumber] = useState ('');
     const [numbers,setNumbers] = useState([]);
     const [calculations, setCalculations] = useState ([]);
+    
 
     //Función que recoja el valor que escriba el usuaria
     const handleUserNumber = (event) => {
@@ -55,11 +56,15 @@ export default function Calculator (){
             <button onClick={handleSaveCalculations}>Guardar operación</button>
             <h2>Resultado del cálculo</h2>
             <ul>Calculo total
-                {calculations.map((calculation, index) => (
-                <li key={index}>
-                    Numbers: {calculation.numbers.join(' + ')} = {calculation.result}
+                 <li>
+                    {calculations.length > 0 ? (
+                        <>
+                        Numbers: {calculations[calculations.length - 1]?.numbers.join(' + ')} = {calculations[calculations.length - 1]?.result}
+                        </>
+                    ) : (
+                        <></>
+                    )}
                 </li>
-                ))}
             </ul>
         </div>
     )

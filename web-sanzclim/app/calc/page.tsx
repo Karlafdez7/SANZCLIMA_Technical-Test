@@ -38,6 +38,7 @@ export default function Calculator (){
     //Funcion para enviar para guardar en el LocalStorage
     const handleSaveCalculations = () => {
         localStorage.setItem('calculations', JSON.stringify(calculations));
+        
     };
     //Estructura básica de HTML para saber las funciones y estados necesarios
     return (

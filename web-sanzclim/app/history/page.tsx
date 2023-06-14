@@ -16,7 +16,7 @@ export default function History (){
             <h1>Donde se guardan los cálculos</h1>
             {saveCalculations.map((calculation, index) => (
             <div key={index}>
-                <p>Numbers: {calculation.numbers.join(', ')}</p>
+                <p>Numbers: {calculation.numbers.join('+ ')}</p>
                 <p>Result: {calculation.result}</p>
             </div>
             ))}

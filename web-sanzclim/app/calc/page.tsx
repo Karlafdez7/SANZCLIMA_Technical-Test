@@ -7,17 +7,19 @@ export default function Calculator (){
     const [numbers,setNumbers] = useState([]);
     const [calculations, setCalculations] = useState ([]);
     
-
     //Función que recoja el valor que escriba el usuaria
     const handleUserNumber = (event) => {
         setCurrentNumber(event.target.value);
     }
     //Función que añade los números que la usuaria escriba. Una vez se añade el número, se vuelve a poner en blanco para añadir un nuevo número. 
-    //En HTML se ha puesto el type text, ya que en el ejercicio ofrecido por la empresa se especifica que no solo va a recibirse types number. 
+    //En HTML se ha puesto el type text, ya que en el ejercicio ofrecido por la empresa se especifica que no solo va a recibirse types number.
+    //Para mejorar la experiencia de usuario: se pueden introducir no solo valores numéricos. Para no afectar en el calculo, todos los valores no numéricos se convierten en el número 0.  
     const handleAddNumber = () => {
-        setNumbers([...numbers, parseFloat(currentNumber)]);
-        setCurrentNumber('')
-    }
+    const parsedNumber = parseFloat(currentNumber);
+    const numberToAdd = isNaN(parsedNumber) ? 0 : parsedNumber;
+    setNumbers([...numbers, numberToAdd]);
+    setCurrentNumber('');
+    };
 
     //Función que calcula la suma: se deben sumar los valores que la usaria previamente ha puesto en la lista de "añadir número".
     //Mediante el console.log(sum) se puede apreciar que la suma de diferentes números se realiza correctamente.
@@ -26,15 +28,16 @@ export default function Calculator (){
     //La variable calculation nos va ayudar a guardar los números de la operación y el resultado, mediante el uso del array (numbers) y el resultado de la constante sum se guarde  "result".
 
     const handleCalculate = () => {
-        const sum = numbers.reduce((accumulator, numbers) => accumulator + numbers,0);
-        const calculation = {
-            numbers: [...numbers],
-            result: sum,
-        };
-        setCalculations([...calculations, calculation]);
-        setNumbers([]);
-        setCurrentNumber('');
-    }
+    const sanitizedNumbers = numbers.map((number) => number ?? 0);
+    const sum = sanitizedNumbers.reduce((accumulator, number) => accumulator + number, 0);
+    const calculation = {
+        numbers: [...numbers],
+        result: sum,
+    };
+    setCalculations([...calculations, calculation]);
+    setNumbers([]);
+    setCurrentNumber('');
+    };
 
     //Funcion para enviar para guardar en el LocalStorage
     const handleSaveCalculations = () => {
@@ -56,7 +59,7 @@ export default function Calculator (){
             <button onClick={handleSaveCalculations}>Guardar operación</button>
             <h2>Resultado del cálculo</h2>
             <ul>Calculo total
-                 <li>
+                <li>
                     {calculations.length > 0 ? (
                         <>
                         Numbers: {calculations[calculations.length - 1]?.numbers.join(' + ')} = {calculations[calculations.length - 1]?.result}

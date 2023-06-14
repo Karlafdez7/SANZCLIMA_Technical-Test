@@ -8,7 +8,9 @@ export default function Calculator (){
     const [calculations, setCalculations] = useState ([]);
 
     //Función que recoja el valor que escriba el usuaria
-    
+    const handleUserNumber = (event) => {
+        setCurrentNumber(event.target.value);
+    }
     //Función que calcule la suma de los números que la usuaria recoja
 
     //Funcion para enviar para el LocalStorage
@@ -17,7 +19,7 @@ export default function Calculator (){
     return (
         <div>
             <h1>Hola soy la calculadora</h1>
-            <input></input>
+            <input type='number' value={currentNumber} onChange={handleUserNumber}></input>
             <button>Añadir número</button>
             <ul>Lista de números que se añaden</ul>
             <button>Sumar</button>

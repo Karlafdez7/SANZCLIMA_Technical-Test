@@ -36,7 +36,9 @@ export default function Calculator (){
     }
 
     //Funcion para enviar para guardar en el LocalStorage
-
+    const handleSaveCalculations = () => {
+        localStorage.setItem('calculations', JSON.stringify(calculations));
+    };
     //Estructura básica de HTML para saber las funciones y estados necesarios
     return (
         <div>
@@ -49,7 +51,7 @@ export default function Calculator (){
                 ))}
             </ul>
             <button onClick={handleCalculate}>Sumar</button>
-            <button>Guardar operación</button>
+            <button onClick={handleSaveCalculations}>Guardar operación</button>
             <h2>Resultado del cálculo</h2>
             <ul>Calculo total
                 {calculations.map((calculation, index) => (

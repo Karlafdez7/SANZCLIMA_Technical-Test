@@ -21,13 +21,21 @@ export default function Calculator (){
     //Función que calcula la suma: se deben sumar los valores que la usaria previamente ha puesto en la lista de "añadir número".
     //Mediante el console.log(sum) se puede apreciar que la suma de diferentes números se realiza correctamente.
     //Se tiene que realizar una función que nos ayude a que esta operación se refleje el html "calculo total". La lógica a seguir debería se crear un objeto que guarde los números y el resultado. 
-    //¿qué pasa cuando se pulsa el botón sumar? --> el espacio para escribir el número se limpia || la lista de números añadidos se borra || El calculo para que se recorra debe guardarse en la variable estado calculations (esto debería ayudarnos a que se pueda guardar más tarde en el LocalStorage) 
+    //¿qué pasa cuando se pulsa el botón sumar? --> el espacio para escribir el número se limpia || la lista de números añadidos se borra || El calculo para que se recorra debe guardarse en la variable estado calculations (esto debería ayudarnos a que se pueda guardar más tarde en el LocalStorage)
+    //La variable calculation nos va ayudar a guardar los números de la operación y el resultado, mediante el uso del array (numbers) y el resultado de la constante sum se guarde  "result".
+
     const handleCalculate = () => {
         const sum = numbers.reduce((accumulator, numbers) => accumulator + numbers,0);
-        console.log(sum);
+        const calculation = {
+            numbers: [...numbers],
+            result: sum,
+        };
+        setCalculations([...calculations, calculation]);
+        setNumbers([]);
+        setCurrentNumber('');
     }
 
-    //Funcion para enviar para el LocalStorage
+    //Funcion para enviar para guardar en el LocalStorage
 
     //Estructura básica de HTML para saber las funciones y estados necesarios
     return (
@@ -44,7 +52,11 @@ export default function Calculator (){
             <button>Guardar operación</button>
             <h2>Resultado del cálculo</h2>
             <ul>Calculo total
-
+                {calculations.map((calculation, index) => (
+                <li key={index}>
+                    Numbers: {calculation.numbers.join(' + ')} = {calculation.result}
+                </li>
+                ))}
             </ul>
         </div>
     )

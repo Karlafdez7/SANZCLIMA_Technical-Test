@@ -1,0 +1,24 @@
+.footer{
+    height: 15vh;
+    width: 100%;
+    background-color: orange;
+    padding-top: 5rem;
+}
+
+.copy{
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+@media (min-width:1024px){
+    .footer{
+        height: 10vh;
+        padding: 3rem;
+    }
+    
+    .copy{
+        font-size: 1.5rem;
+    }
+
+}

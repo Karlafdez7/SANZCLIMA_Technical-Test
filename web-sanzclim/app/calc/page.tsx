@@ -73,4 +73,7 @@ export default function Calculator (){
     )
 }
 
+//Modificación en el HTML: Para que solo se visualice la operación que está realizando el usuario (último array) --> se cambia el método 'maps' por recoger la última posición del array mediante .length -1.
+
+//Cuando no hay cáculo hecho no se vea nada --> condicional.
 

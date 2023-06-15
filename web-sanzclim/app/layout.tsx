@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Navigation } from './components/navigation'
+import { Header } from './components/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,14 +20,12 @@ export default function RootLayout({
         <title> Sanz Clim- Karla</title>
       </head>
       <body>
-        <h1>Primer proyecto técnico para Sanz Clim</h1>
-        <Navigation/>
+        <Header/>
         {children}
       </body>
     </html>
   )
 }
-
 
 
 

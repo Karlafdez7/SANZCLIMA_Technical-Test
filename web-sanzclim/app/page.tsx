@@ -1,8 +1,10 @@
 'use client'
+import './globals.css'
+
 export default function HomePage() {
 
   return(
-    <h1>Hola, soy un proyecto en Next.js</h1>
+    <h1 className=''>Hola, soy un proyecto en Next.js</h1>
   )
 }
 

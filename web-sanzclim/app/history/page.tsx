@@ -10,8 +10,8 @@ export default function History (){
 
     //Get del LocalStorage para pintar los cálculos hechos en '/calc'
     useEffect(() => {
-        const savedCalculations = JSON.parse(localStorage.getItem('calculations')) || [];
-        setSavedCalculations(savedCalculations);
+    const savedCalculations = JSON.parse(localStorage.getItem('calculations') ?? '[]');
+    setSavedCalculations(savedCalculations);
     }, []);
     //Estructura básica de HTML para saber qué funciones o variables de estados necesito
     return(

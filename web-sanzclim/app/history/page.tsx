@@ -9,6 +9,7 @@ export default function History (){
 
 
     //Get del LocalStorage para pintar los cálculos hechos en '/calc'
+    //TYPESCRIPT: se añade ?? '[]' -->si localStorage.getItem('calculations') es null, se utilizará '[]' como valor predeterminado para el JSON.parse(). 
     useEffect(() => {
     const savedCalculations = JSON.parse(localStorage.getItem('calculations') ?? '[]');
     setSavedCalculations(savedCalculations);

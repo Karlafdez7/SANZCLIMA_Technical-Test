@@ -3,12 +3,15 @@ import {useState, useEffect} from 'react';
 //importar useState y useEffect para poder trabajar las variables de estado y LocalStorage
 export default function Calculator (){
     //Variables de estados necesarios:1) Una variable que guarde cada número de la usuaria 'currentNumber'--> number || Una variable que guarde el calculo de la suma de los números introducidos 'calculations' --> array || Número que guarde la lista de números del cálculo 'numbers' --> array
+
+    //TYPESCRIPT: adaptación de las variables de estado para un mejor controlde los datos guardados.
     const [currentNumber, setCurrentNumber] = useState ('');
-    const [numbers,setNumbers] = useState([]);
-    const [calculations, setCalculations] = useState ([]);
+    const [numbers, setNumbers] = useState<number[]>([]);
+    const [calculations, setCalculations] = useState<{ numbers: number[]; result: number }[]>([]);
     
-    //Función que recoja el valor que escriba el usuaria
-    const handleUserNumber = (event) => {
+    //Función que recoja el valor que escriba la usuaria.
+    //TYPESCRIPT: Para escribir el evento onChange del elemento se debe usar "React.ChangeEvent<HTMLInputElement>" || el "ChangeEvent" ayuda a acceder al valor del elemento en event-target-value.
+    const handleUserNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentNumber(event.target.value);
     }
     //Función que añade los números que la usuaria escriba. Una vez se añade el número, se vuelve a poner en blanco para añadir un nuevo número. 

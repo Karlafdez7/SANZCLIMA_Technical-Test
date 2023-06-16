@@ -8,7 +8,7 @@
     height: 70%;
     font-size: 2.4rem;
     text-align: center;
-    padding-top:2.5rem;
+    padding-top:3rem;
 }
 
 .navigation{
@@ -43,5 +43,10 @@
 @media (min-width:1024px){
     .header{
         height: 20vh;
+    }
+
+    .title{
+        font-size: 4rem;
+        padding-top: 5rem;
     }
 }

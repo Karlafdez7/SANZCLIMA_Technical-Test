@@ -1,0 +1,130 @@
+.body_calculator{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    background-color: cornsilk;
+}
+
+.title{
+    font-size: 2.2rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_add{
+    text-align: end;
+}
+
+.number_add{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input_add{
+    font-size: 1.6rem;
+}
+.button_add{
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    margin-top: .5rem;
+}
+
+.container_list{
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: white;
+    padding: 1rem;
+}
+
+.number_list{
+    font-size: 1.6rem;
+    margin: .5rem 0;
+}
+
+.container_buttons{
+    text-align: center;
+}
+
+.text_buttons{
+    font-size: 1.8rem;
+}
+
+.buttons{
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    margin: 1rem .5rem;
+}
+
+.container_operation{
+    text-align: center;
+}
+
+.text_operation{
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+.operation{
+    font-size: 1.6rem;
+}
+
+@media (min-width:768px){
+    .body_calculator{
+        padding-top: 4rem;
+    }
+}
+
+@media (min-width:1024px){
+    .body_calculator{
+        padding-top: 5rem;
+    }
+    .title{
+        font-size: 2.8rem;
+    }
+
+    .form{
+        margin: 2rem 0;
+    }
+    .number_add{
+        font-size: 2.5rem;
+    }
+
+    .input_add{
+        font-size: 2rem;
+    }
+
+    .button_add{
+        font-size: 1.5rem;
+    }
+
+    .container_list{
+        font-size: 2rem;
+    }
+
+    .number_list{
+        font-size: 2rem;
+    }
+
+    .text_buttons{
+        font-size: 2rem;
+    }
+    .buttons{
+        font-size: 1.6rem;
+    }
+
+    .operation{
+        font-size: 2rem;
+    }
+}

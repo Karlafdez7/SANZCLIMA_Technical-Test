@@ -1,5 +1,6 @@
 'use client'
 import {useState, useEffect} from 'react';
+import style from './style.module.css'
 //importar useState y useEffect para poder trabajar las variables de estado y LocalStorage
 export default function Calculator (){
     //Variables de estados necesarios:1) Una variable que guarde cada número de la usuaria 'currentNumber'--> number || Una variable que guarde el calculo de la suma de los números introducidos 'calculations' --> array || Número que guarde la lista de números del cálculo 'numbers' --> array
@@ -49,29 +50,59 @@ export default function Calculator (){
     };
     //Estructura básica de HTML para saber las funciones y estados necesarios
     return (
-        <div>
-            <h1>Hola soy la calculadora</h1>
-            <input type='text' value={currentNumber} onChange={handleUserNumber}></input>
-            <button onClick={handleAddNumber}>Añadir número</button>
-            <ul>Lista de números que se añaden
-                {numbers.map((number, index) => (
-                    <li key={index}>{number}</li>
-                ))}
-            </ul>
-            <button onClick={handleCalculate}>Sumar</button>
-            <button onClick={handleSaveCalculations}>Guardar operación</button>
-            <h2>Resultado del cálculo</h2>
-            <ul>Calculo total
-                <li>
-                    {calculations.length > 0 ? (
+        <div className={style.body_calculator}>
+            <h2 className={style.title}>Calcula tus sumas +</h2>
+            <form className={style.form}>
+                <section className={style.container_add}>
+                    <label className={style.number_add}>
+                        Introduce tu número:
+                        <input 
+                            className={style.input_add}
+                            placeholder="789"
+                            type="text"
+                            value={currentNumber}
+                            onChange={handleUserNumber}
+                        />
+                    </label>
+                    <button className={style.button_add} type="button" onClick={handleAddNumber}>
+                        Añadir número
+                    </button>
+                </section>
+                <ul className={style.container_list}>
+                    Lista de números que se añaden
+                    {numbers.map((number, index) => (
+                        <li className={style.number_list} key={index}>{number}</li>
+                    ))}
+                </ul>
+                <section className={style.container_buttons}> 
+                    <p className={style.text_buttons}>¿Qué hacemos con estos números?</p>
+                    <button 
+                    className={style.buttons}
+                    type="button" onClick={handleCalculate}>
+                        Sumar
+                    </button>
+                    <button 
+                    className={style.buttons}
+                    type="button" onClick={handleSaveCalculations}>
+                        Guardar operación
+                    </button>
+                </section>
+            </form>
+            <section className={style.container_operation}>
+                <h3 className={style.text_operation}>Resultado del cálculo</h3>
+                <ul>
+                    <li className={style.operation}>
+                        {calculations.length > 0 ? (
                         <>
-                        Numbers: {calculations[calculations.length - 1]?.numbers.join(' + ')} = {calculations[calculations.length - 1]?.result}
+                            Cálculo: {calculations[calculations.length - 1]?.numbers.join(' + ')} ={' '}
+                            {calculations[calculations.length - 1]?.result}
                         </>
-                    ) : (
+                        ) : (
                         <></>
-                    )}
-                </li>
-            </ul>
+                        )}
+                    </li>
+                </ul>
+            </section>
         </div>
     )
 }

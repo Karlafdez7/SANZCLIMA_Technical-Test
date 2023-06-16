@@ -1,5 +1,6 @@
 'use client'
 import {useEffect, useState} from 'react';
+import style from './history.module.css'
 
 export default function History (){
     //¿Qué variables necesito? necesito la variable de estado donde se recoge la operación: la variable de estado que se ha usado en el endpoint calc para guardar los números sumados y el resultado fue "calculations". Se va a reutilizar.
@@ -16,14 +17,17 @@ export default function History (){
     }, []);
     //Estructura básica de HTML para saber qué funciones o variables de estados necesito
     return(
-        <div>
-            <h1>Donde se guardan los cálculos</h1>
-            {savedCalculations.map((calculation, index) => (
-            <div key={index}>
-                <p>Numbers: {calculation.numbers.join('+ ')}</p>
-                <p>Result: {calculation.result}</p>
-            </div>
-            ))}
+        <div className={style.body_history}>
+            <h1 className={style.title}>Tus sumas guardadas:</h1>
+            <section className={style.container_history}>
+                {savedCalculations.map((calculation, index) => (
+                <div className={style.calculation} key={index}>
+                    <p>Números: {calculation.numbers.join('+ ')}</p>
+                    <p>Resultados: {calculation.result}</p>
+                </div>
+                ))}
+            </section>
+            
         </div>  
     )
 }

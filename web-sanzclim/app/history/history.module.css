@@ -1,0 +1,47 @@
+.body_history{
+    height: 70vh;
+    text-align: center;
+    padding: 3rem 2rem 0;
+    background-color: rgb(247, 223, 198);
+}
+
+.title{
+    font-size: 2rem;
+
+}
+
+.container_history{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.calculation{
+    margin: 1rem;
+    background-color: white;
+    padding: 1rem;
+    font-size: 1.8rem;
+
+}
+
+@media (min-width:768px){
+    .title{
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .calculation{
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width:1024px){
+    .body_history{
+        padding: 4rem 6rem 0;
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .calculation{
+        font-size: 3rem;
+    }
+}

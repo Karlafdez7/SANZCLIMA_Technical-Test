@@ -26,7 +26,7 @@ Prueba técnica para la empresa Sanz Clima. Proyecto realizado con **NEXT.js y T
 ## Imagenes del proyecto
 
 <div align="center">
- ### Calculator responsive:
+CALCULATOR RESPONSIVE: 
 
 </br>
 <p> Versión móvil:
@@ -42,4 +42,24 @@ Prueba técnica para la empresa Sanz Clima. Proyecto realizado con **NEXT.js y T
 </div>
 </br>
 
+<div align="center">
+HISTORY RESPONSIVE: 
+
+</br>
+<p> Versión móvil:
+</p>
+<img width="25%" height="35%" src="https://github.com/Karlafdez7/SANZCLIMA_Technical-Test/blob/main/web-sanzclim/Images_Readme/4%20history%20movil.png?raw=true" alt="cover" />
+</br>
+<p> Versión tableta:
+</p>
+<img width="45%" height="55%" src="https://github.com/Karlafdez7/SANZCLIMA_Technical-Test/blob/main/web-sanzclim/Images_Readme/5%20history%20tablet.png?raw=true" alt="cover" />
+</br>
+  <img width="85%" height="55%" src="https://github.com/Karlafdez7/SANZCLIMA_Technical-Test/blob/main/web-sanzclim/Images_Readme/6%20history%20desktop.png?raw=true" alt="cover" />
+</br>
+</div>
+</br>
+
+## Comentarios:
+
+Esta página web se ha hecho con mucho entusiasmo. No obstante, todo feedback será agradecido.
 

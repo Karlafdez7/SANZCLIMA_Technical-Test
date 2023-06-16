@@ -15,7 +15,7 @@ const links =[{
 export function Header (){
     return(
         <header className={style.header}>
-          <h1 className={style.title}>Proyecto Técnico Sanz Clim</h1>
+          <h1 className={style.title}>Proyecto Técnico Sanz Clima</h1>
           <nav className={style.navigation}>
             <ul className={style.list}>
               {links.map(({label,route})=>(

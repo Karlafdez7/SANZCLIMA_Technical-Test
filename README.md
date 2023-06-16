@@ -17,7 +17,9 @@ Prueba técnica para la empresa Sanz Clima. Proyecto realizado con **NEXT.js y T
 - Todos los calculos podrán ser guardados.
 - La página web cuenta con tres pastañas:
   > Home: Qué podrás encontrar en esta página
+  
   > Calculator: Realiza tus sumas sin límite de dígitos
+  
   > History: Encuentra tus cálculos guardados
 
 - Introduce todo tipo de caracteres, que esta calculadora de suma no se frenará. SU configuración tranforma valores no numéricos es 0, para no afectar al cáclulo.
